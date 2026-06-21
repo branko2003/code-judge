@@ -2,11 +2,14 @@ package com.branko.midlevel.codejudge.controller;
 
 import com.branko.midlevel.codejudge.dto.request.AddUsersToContestRequest;
 import com.branko.midlevel.codejudge.dto.request.CreateContestRequest;
+import com.branko.midlevel.codejudge.dto.request.EnrollContestRequest;
 import com.branko.midlevel.codejudge.dto.request.UpdateContestRequest;
 import com.branko.midlevel.codejudge.dto.response.AddUsersToContestResponse;
+import com.branko.midlevel.codejudge.dto.response.CommonResponse;
 import com.branko.midlevel.codejudge.dto.response.ContestResponse;
 import com.branko.midlevel.codejudge.usecase.AddUsersToContestUseCase;
 import com.branko.midlevel.codejudge.usecase.CreateContestUseCase;
+import com.branko.midlevel.codejudge.usecase.EnrollContestUseCase;
 import com.branko.midlevel.codejudge.usecase.UpdateContestUseCase;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +24,7 @@ public class ContestController {
     private final CreateContestUseCase createContestUseCase;
     private final AddUsersToContestUseCase addUsersToContestUseCase;
     private final UpdateContestUseCase updateContestUseCase;
+    private final EnrollContestUseCase enrollContestUseCase;
 
     @PostMapping("/CreateContest")
     public ContestResponse createContest(@Valid @RequestBody CreateContestRequest request) {
@@ -38,8 +42,8 @@ public class ContestController {
     }
 
     @PostMapping("/EnrollContest")
-    public AddUsersToContestResponse enrollContest(@Valid @RequestBody AddUsersToContestRequest request) {
-        return addUsersToContestUseCase.execute(request);
+    public CommonResponse enrollContest(@Valid @RequestBody EnrollContestRequest request) {
+        return enrollContestUseCase.execute(request);
     }
 
 
