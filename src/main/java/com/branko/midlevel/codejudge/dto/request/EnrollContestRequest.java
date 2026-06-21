@@ -7,11 +7,8 @@ import lombok.Getter;
 import java.util.List;
 
 @Getter
-public class AddUsersToContestRequest {
+public class EnrollContestRequest {
 
     @NotNull
     private Long contestId;
-
-    @NotEmpty
-    private List<String> userList;
 }
