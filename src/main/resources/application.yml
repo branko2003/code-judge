@@ -8,6 +8,12 @@ application:
       expiration: 8640000 # a day
       refresh-token:
         expiration: 604800000 # 7 days
+
+asyncProcess:
+  corePoolSize: 30
+  maxPoolSize: 100
+  queueCapacity: 1000
+
 spring:
   application:
     name: codejudge
