@@ -1,32 +1,39 @@
 package com.branko.midlevel.codejudge.repository.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
 @Table(name = "submissions")
+@Getter
+@Setter
 public class Submission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private User user;
 
-    @ManyToOne
-    private Problem problem;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ContestProblem contestProblem;
 
-    @ManyToOne
-    private Contest contest;
-
-    @Lob
+    @Column(columnDefinition = "TEXT")
     private String sourceCode;
 
     private String language;
 
-    private String verdict;
+    private Integer passed;
 
-    private Date submittedAt;
+    private Integer total;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    private LocalDateTime submittedAt;
 }

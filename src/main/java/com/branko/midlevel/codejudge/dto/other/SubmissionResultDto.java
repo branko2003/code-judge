@@ -9,12 +9,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProblemDto {
+public class SubmissionResultDto {
 
     private Long id;
-    private String description;
-    private String inputDescription;
-    private String outputDescription;
-    private String sampleInput;
-    private String sampleOutput;
+    private TestCaseDto testCase;
+    private String veredict;
+    private String actualOutput;
 }

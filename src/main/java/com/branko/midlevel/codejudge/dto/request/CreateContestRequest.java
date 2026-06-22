@@ -10,16 +10,15 @@ import java.time.LocalDateTime;
 @Getter
 public class CreateContestRequest {
 
-    @NotBlank
+    @NotBlank(message = "{contestTitle.notblank}")
     private String title;
 
-    @NotBlank
+    @NotBlank(message = "{contestDescription.notblank}")
     private String description;
 
-    @NotNull
-    @FutureOrPresent
+    @NotNull(message = "{contestStartTime.notnull}")
     private LocalDateTime startTime;
 
-    @NotNull
+    @NotNull(message = "{contestEndTime.notnull}")
     private LocalDateTime endTime;
 }

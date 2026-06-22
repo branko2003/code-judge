@@ -2,17 +2,15 @@ package com.branko.midlevel.codejudge.dto.other;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
-public class TestCaseDto {
+public class SubmissionProblem {
 
-    private Long id;
-    private String inputData;
-    private String expectedOutput;
-
+    private ProblemDto problem;
+    private SubmissionResultUserDto submissionResult;
 }
