@@ -7,6 +7,8 @@ import com.branko.midlevel.codejudge.repository.entity.TestCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class TestCaseServiceImpl implements TestCaseService {
@@ -17,5 +19,10 @@ public class TestCaseServiceImpl implements TestCaseService {
     @Override
     public TestCaseDto createTestCase(TestCase testCase) {
         return testCaseMapper.TestCaseDtoFromMapCreateTestCase(testCaseRepository.save(testCase));
+    }
+
+    @Override
+    public List<TestCaseDto> getTestCaseByProblemId(Long problemId) {
+        return testCaseMapper.testCaseDtoListFromTestCaseList(testCaseRepository.findByProblemId(problemId));
     }
 }
