@@ -3,7 +3,6 @@ package com.branko.midlevel.codejudge.usecase;
 import com.branko.midlevel.codejudge.constant.RoleEnum;
 import com.branko.midlevel.codejudge.dto.other.UserDto;
 import com.branko.midlevel.codejudge.dto.request.CreateUserRequest;
-import com.branko.midlevel.codejudge.dto.request.UpdateUserRequest;
 import com.branko.midlevel.codejudge.dto.response.UserResponse;
 import com.branko.midlevel.codejudge.mapper.UserMapper;
 import com.branko.midlevel.codejudge.repository.entity.User;
@@ -20,7 +19,7 @@ public class CreateUserUseCase {
 
     public UserResponse execute(CreateUserRequest request) {
         this.validateUser(request);
-        User userToCreate = userMapper.userFromMapCreateUserRequest(request);
+        User userToCreate = userMapper.userFromCreateUserRequest(request);
         UserDto userSave = userService.createUser(userToCreate);
         return new UserResponse(userSave);
 
