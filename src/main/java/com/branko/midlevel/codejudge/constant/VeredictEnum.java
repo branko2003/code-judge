@@ -2,11 +2,9 @@ package com.branko.midlevel.codejudge.constant;
 
 public enum VeredictEnum {
     ACCEPTED("accepted"),
-    WRONG_ANSWER("wrong_answer"),
-    COMPILATION_ERROR("compilation_error"),
-    RUNTIME_ERROR("runtime_error"),
-    TIME_LIMIT_EXCEEDED("time_limit_exceeded"),
-    PENDING("pending");
+    WRONG_ANSWER("wrong answer"),
+    COMPILATION_ERROR("compilation error"),
+    RUNTIME_ERROR("runtime error");
 
     private final String value;
 
