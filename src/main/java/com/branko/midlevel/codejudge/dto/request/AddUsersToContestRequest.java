@@ -9,9 +9,9 @@ import java.util.List;
 @Getter
 public class AddUsersToContestRequest {
 
-    @NotNull
+    @NotNull(message = "{contestId.notnull}")
     private Long contestId;
 
-    @NotEmpty
+    @NotEmpty(message = "{userlist.notempty}")
     private List<String> userList;
 }

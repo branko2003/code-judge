@@ -5,6 +5,8 @@ import com.branko.midlevel.codejudge.dto.other.ContestEnrollmentDto;
 import com.branko.midlevel.codejudge.dto.other.UserDto;
 import com.branko.midlevel.codejudge.dto.request.AddUsersToContestRequest;
 import com.branko.midlevel.codejudge.dto.response.AddUsersToContestResponse;
+import com.branko.midlevel.codejudge.exception.BadRequestException;
+import com.branko.midlevel.codejudge.helper.MessageUtil;
 import com.branko.midlevel.codejudge.service.ContestEnrollmentService;
 import com.branko.midlevel.codejudge.service.ContestService;
 import com.branko.midlevel.codejudge.service.UserService;
@@ -22,6 +24,7 @@ public class AddUsersToContestUseCase {
     private final ContestService contestService;
     private final ContestEnrollmentService contestEnrollmentService;
     private final UserService userService;
+    private final MessageUtil messageUtil;
 
     public AddUsersToContestResponse execute(AddUsersToContestRequest request) {
         List<String> usersToInserts = this.validate(request);
@@ -32,7 +35,7 @@ public class AddUsersToContestUseCase {
     private List<String> validate(AddUsersToContestRequest request) {
         ContestDto contest = contestService.getById(request.getContestId());
         if (contest == null) {
-            throw new RuntimeException("");
+            throw new BadRequestException(messageUtil.get("contest.notfound"));
         }
 
         Set<String> userIdList = userService.getUsersByIds(request.getUserList())
@@ -47,7 +50,7 @@ public class AddUsersToContestUseCase {
                 .filter(userId -> !alreadyEnrolled.contains(userId))
                 .toList();
         if (usersToInsert.isEmpty()) {
-            throw new RuntimeException("");
+            throw new BadRequestException(messageUtil.get("contest.enrollment.users.nothing.to.add"));
         }
 
         return usersToInsert;
