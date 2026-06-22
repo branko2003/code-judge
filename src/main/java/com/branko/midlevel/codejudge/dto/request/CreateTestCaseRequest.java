@@ -9,13 +9,12 @@ import lombok.Setter;
 @Setter
 public class CreateTestCaseRequest {
 
-    @NotNull
+    @NotNull(message = "{problemId.notnull}")
     private Long problemId;
 
-    @NotBlank
+    @NotBlank(message = "{testCaseInputData.notblank}")
     private String inputData;
 
-    @NotBlank
+    @NotBlank(message = "{testCaseExpectedOutput.notblank}")
     private String expectedOutput;
-
 }

@@ -10,5 +10,7 @@ public interface ProblemMapper {
 
     ProblemDto problemDtoFromMapProblem(Problem problem);
 
+    Problem problemFromProblemDto(ProblemDto problemDto);
+
     Problem problemFromMapCreateProblemRequest(CreateProblemRequest request);
 }
