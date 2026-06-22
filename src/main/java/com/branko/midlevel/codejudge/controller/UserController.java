@@ -7,6 +7,7 @@ import com.branko.midlevel.codejudge.usecase.CreateUserUseCase;
 import com.branko.midlevel.codejudge.usecase.UpdateUserUseCase;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,21 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     private final CreateUserUseCase createUserUseCase;
-    private final UpdateUserUseCase updateUserUseCase;
 
-    @PostMapping("/CreateUser")
+    @PostMapping(value = "/CreateUser", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public UserResponse createUser(@Valid @RequestBody CreateUserRequest request) {
         return createUserUseCase.execute(request);
     }
-
-    @PostMapping("/UpdateUser")
-    public UserResponse updateUser(@Valid @RequestBody UpdateUserRequest request) {
-        return updateUserUseCase.execute(request);
-    }
-/*
-    @PostMapping("/createParticipant")
-    public UserResponse createParticipant(@Valid @RequestBody CreateUserRequest request) {
-        return createUserUseCase.execute(request);
-    }
-*/
 }

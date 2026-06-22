@@ -17,18 +17,18 @@ public class UpdateUserUseCase {
     private final UserMapper userMapper;
 
     public UserResponse execute(UpdateUserRequest request) {
-        User user = this.validateUser(request);
+        UserDto user = this.validateUser(request);
         //User userToUpdate = userMapper.userFromMapUpdateUserRequest(request, user);
-        UserDto userUpdate = userService.updateUser(user);
-        return new UserResponse(userUpdate);
+        //UserDto userUpdate = userService.updateUser(user);
+        return new UserResponse(null);
 
     }
 
-    private User validateUser(UpdateUserRequest request) {
+    private UserDto validateUser(UpdateUserRequest request) {
         if (!RoleEnum.isAllowedRol(request.getRole())) {
             throw new RuntimeException("Invalid role");
         }
-        User user = userService.getById(request.getUserId());
+        UserDto user = userService.getById(request.getUserId());
         if (user == null) {
             throw new RuntimeException("User not found");
         }
