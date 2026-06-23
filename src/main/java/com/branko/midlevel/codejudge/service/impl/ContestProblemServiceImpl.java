@@ -1,12 +1,10 @@
-package com.branko.midlevel.codejudge.service;
+package com.branko.midlevel.codejudge.service.impl;
 
 import com.branko.midlevel.codejudge.dto.other.ContestProblemDto;
 import com.branko.midlevel.codejudge.dto.other.ContestProblemWithContest;
 import com.branko.midlevel.codejudge.mapper.ContestProblemMapper;
 import com.branko.midlevel.codejudge.repository.ContestProblemRepository;
-import com.branko.midlevel.codejudge.repository.entity.Contest;
-import com.branko.midlevel.codejudge.repository.entity.ContestProblem;
-import com.branko.midlevel.codejudge.repository.entity.Problem;
+import com.branko.midlevel.codejudge.service.ContestProblemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

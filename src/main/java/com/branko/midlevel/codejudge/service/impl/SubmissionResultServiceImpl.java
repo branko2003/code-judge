@@ -1,9 +1,10 @@
-package com.branko.midlevel.codejudge.service;
+package com.branko.midlevel.codejudge.service.impl;
 
 import com.branko.midlevel.codejudge.dto.other.SubmissionResultDto;
 import com.branko.midlevel.codejudge.mapper.SubmissionResultMapper;
 import com.branko.midlevel.codejudge.repository.SubmissionResultRepository;
 import com.branko.midlevel.codejudge.repository.entity.SubmissionResult;
+import com.branko.midlevel.codejudge.service.SubmissionResultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

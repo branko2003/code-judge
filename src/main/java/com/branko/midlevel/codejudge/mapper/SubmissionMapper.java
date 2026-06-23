@@ -1,12 +1,11 @@
 package com.branko.midlevel.codejudge.mapper;
 
+import com.branko.midlevel.codejudge.repository.entity.ContestProblem;
+import com.branko.midlevel.codejudge.repository.entity.Submission;
+import com.branko.midlevel.codejudge.repository.entity.User;
 import com.branko.midlevel.codejudge.dto.other.SubmissionDto;
 import com.branko.midlevel.codejudge.dto.other.SubmissionUpdate;
-import com.branko.midlevel.codejudge.dto.other.SubmissionWithProblemDto;
 import com.branko.midlevel.codejudge.dto.request.SubmitSumissionRequest;
-import com.branko.midlevel.codejudge.dto.request.UpdateContestRequest;
-import com.branko.midlevel.codejudge.dto.request.UpdateUserRequest;
-import com.branko.midlevel.codejudge.repository.entity.*;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;

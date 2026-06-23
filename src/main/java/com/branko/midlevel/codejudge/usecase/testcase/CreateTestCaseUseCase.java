@@ -1,4 +1,4 @@
-package com.branko.midlevel.codejudge.usecase;
+package com.branko.midlevel.codejudge.usecase.testcase;
 
 import com.branko.midlevel.codejudge.dto.other.ProblemDto;
 import com.branko.midlevel.codejudge.dto.other.TestCaseDto;
@@ -8,8 +8,6 @@ import com.branko.midlevel.codejudge.exception.BadRequestException;
 import com.branko.midlevel.codejudge.helper.MessageUtil;
 import com.branko.midlevel.codejudge.mapper.ProblemMapper;
 import com.branko.midlevel.codejudge.mapper.TestCaseMapper;
-import com.branko.midlevel.codejudge.repository.entity.Contest;
-import com.branko.midlevel.codejudge.repository.entity.Problem;
 import com.branko.midlevel.codejudge.repository.entity.TestCase;
 import com.branko.midlevel.codejudge.service.ProblemService;
 import com.branko.midlevel.codejudge.service.TestCaseService;

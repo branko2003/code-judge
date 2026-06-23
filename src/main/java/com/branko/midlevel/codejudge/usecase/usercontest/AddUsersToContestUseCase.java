@@ -1,4 +1,4 @@
-package com.branko.midlevel.codejudge.usecase;
+package com.branko.midlevel.codejudge.usecase.usercontest;
 
 import com.branko.midlevel.codejudge.dto.other.ContestDto;
 import com.branko.midlevel.codejudge.dto.other.ContestEnrollmentDto;

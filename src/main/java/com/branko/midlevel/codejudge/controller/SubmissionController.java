@@ -5,9 +5,9 @@ import com.branko.midlevel.codejudge.dto.request.SumissionResultContestByUserReq
 import com.branko.midlevel.codejudge.dto.request.SumissionResultRequest;
 import com.branko.midlevel.codejudge.dto.response.CommonResponse;
 import com.branko.midlevel.codejudge.dto.response.SubmissionResultResponse;
-import com.branko.midlevel.codejudge.usecase.SubmissionResultContestByUserUseCase;
-import com.branko.midlevel.codejudge.usecase.SubmissionResultContestUseCase;
-import com.branko.midlevel.codejudge.usecase.SubmitSubmissionUseCase;
+import com.branko.midlevel.codejudge.usecase.submission.SubmissionResultContestByUserUseCase;
+import com.branko.midlevel.codejudge.usecase.submission.SubmissionResultContestUseCase;
+import com.branko.midlevel.codejudge.usecase.submission.SubmitSubmissionUseCase;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

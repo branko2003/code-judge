@@ -1,10 +1,8 @@
 package com.branko.midlevel.codejudge.controller;
 
 import com.branko.midlevel.codejudge.dto.request.CreateUserRequest;
-import com.branko.midlevel.codejudge.dto.request.UpdateUserRequest;
 import com.branko.midlevel.codejudge.dto.response.UserResponse;
-import com.branko.midlevel.codejudge.usecase.CreateUserUseCase;
-import com.branko.midlevel.codejudge.usecase.UpdateUserUseCase;
+import com.branko.midlevel.codejudge.usecase.user.CreateUserUseCase;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;

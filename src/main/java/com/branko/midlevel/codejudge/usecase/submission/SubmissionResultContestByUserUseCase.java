@@ -1,10 +1,8 @@
-package com.branko.midlevel.codejudge.usecase;
+package com.branko.midlevel.codejudge.usecase.submission;
 
 import com.branko.midlevel.codejudge.context.UserContext;
 import com.branko.midlevel.codejudge.dto.other.*;
 import com.branko.midlevel.codejudge.dto.request.SumissionResultContestByUserRequest;
-import com.branko.midlevel.codejudge.dto.request.SumissionResultRequest;
-import com.branko.midlevel.codejudge.dto.response.SubmissionResultByContestResponse;
 import com.branko.midlevel.codejudge.dto.response.SubmissionResultResponse;
 import com.branko.midlevel.codejudge.exception.BadRequestException;
 import com.branko.midlevel.codejudge.helper.MessageUtil;
