@@ -24,10 +24,14 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop #update
     show-sql: true
 
     properties:
       hibernate:
         format_sql: true
-
+cache:
+  caffeine:
+    maximum-size: 10000
+    initial-capacity: 100
+    expire-after-write-minutes: 10

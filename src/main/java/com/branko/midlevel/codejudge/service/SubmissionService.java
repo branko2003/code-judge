@@ -2,7 +2,6 @@ package com.branko.midlevel.codejudge.service;
 
 import com.branko.midlevel.codejudge.dto.other.SubmissionDto;
 import com.branko.midlevel.codejudge.dto.other.SubmissionUpdate;
-import com.branko.midlevel.codejudge.dto.other.SubmissionWithProblemDto;
 import com.branko.midlevel.codejudge.repository.entity.Submission;
 import org.springframework.stereotype.Service;
 

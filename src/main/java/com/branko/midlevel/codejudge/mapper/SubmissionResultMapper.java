@@ -3,7 +3,6 @@ package com.branko.midlevel.codejudge.mapper;
 import com.branko.midlevel.codejudge.dto.other.SubmissionResultDto;
 import com.branko.midlevel.codejudge.repository.entity.SubmissionResult;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 import java.util.List;
 

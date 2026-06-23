@@ -1,4 +1,4 @@
-package com.branko.midlevel.codejudge.usecase;
+package com.branko.midlevel.codejudge.usecase.submission;
 
 import com.branko.midlevel.codejudge.context.UserContext;
 import com.branko.midlevel.codejudge.dto.other.*;

@@ -9,13 +9,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SubmissionDto {
+public class UserAuth {
 
-    private Long id;
-    private UserDto user;
-    private Long contestProblemId;
-    private String sourceCode;
-    private String language;
-    private Long total;
-    private Long passed;
+    private String id;
+    private String name;
+    private String lastname;
+    private String username;
+    private String password;
+    private String role;
 }

@@ -1,17 +1,13 @@
-package com.branko.midlevel.codejudge.usecase;
+package com.branko.midlevel.codejudge.usecase.usercontest;
 
-import com.branko.midlevel.codejudge.constant.ApiResponseConstant;
 import com.branko.midlevel.codejudge.context.UserContext;
 import com.branko.midlevel.codejudge.dto.other.ContestDto;
 import com.branko.midlevel.codejudge.dto.other.ContestEnrollmentDto;
 import com.branko.midlevel.codejudge.dto.other.UserDto;
-import com.branko.midlevel.codejudge.dto.request.AddUsersToContestRequest;
 import com.branko.midlevel.codejudge.dto.request.EnrollContestRequest;
-import com.branko.midlevel.codejudge.dto.response.AddUsersToContestResponse;
 import com.branko.midlevel.codejudge.dto.response.CommonResponse;
 import com.branko.midlevel.codejudge.exception.BadRequestException;
 import com.branko.midlevel.codejudge.helper.MessageUtil;
-import com.branko.midlevel.codejudge.repository.entity.ContestEnrollment;
 import com.branko.midlevel.codejudge.service.ContestEnrollmentService;
 import com.branko.midlevel.codejudge.service.ContestService;
 import com.branko.midlevel.codejudge.service.UserService;
@@ -37,7 +33,7 @@ public class EnrollContestUseCase {
     private ContestDto validateContest(EnrollContestRequest request) {
         ContestDto contest = contestService.getById(request.getContestId());
         if (contest == null) {
-            throw new RuntimeException("");
+            throw new BadRequestException(messageUtil.get("contest.notfound"));
         }
         ContestEnrollmentDto contestEnrollmentDto = contestEnrollmentService.getByUserIdAndContestId(UserContext.getUserId(), contest.getId());
         if (contestEnrollmentDto != null) {
@@ -49,7 +45,7 @@ public class EnrollContestUseCase {
     private UserDto validateUser(EnrollContestRequest request) {
         UserDto userDto = userService.getById(UserContext.getUserId());
         if (userDto == null) {
-            throw new RuntimeException("user dont exists");
+            throw new BadRequestException(messageUtil.get("user.notfound"));
         }
         return userDto;
     }

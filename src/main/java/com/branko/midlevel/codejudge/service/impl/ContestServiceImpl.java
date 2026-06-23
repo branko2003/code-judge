@@ -1,4 +1,4 @@
-package com.branko.midlevel.codejudge.service;
+package com.branko.midlevel.codejudge.service.impl;
 
 
 import com.branko.midlevel.codejudge.constant.ContestStatusEnum;
@@ -9,6 +9,7 @@ import com.branko.midlevel.codejudge.helper.MessageUtil;
 import com.branko.midlevel.codejudge.mapper.ContestMapper;
 import com.branko.midlevel.codejudge.repository.ContestRepository;
 import com.branko.midlevel.codejudge.repository.entity.Contest;
+import com.branko.midlevel.codejudge.service.ContestService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

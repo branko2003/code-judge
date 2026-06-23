@@ -1,7 +1,6 @@
-package com.branko.midlevel.codejudge.usecase;
+package com.branko.midlevel.codejudge.usecase.submission;
 
 import com.branko.midlevel.codejudge.constant.JudgeLanguageStrategyName;
-import com.branko.midlevel.codejudge.constant.RoleEnum;
 import com.branko.midlevel.codejudge.context.UserContext;
 import com.branko.midlevel.codejudge.dto.other.*;
 import com.branko.midlevel.codejudge.dto.request.SubmitSumissionRequest;
@@ -9,11 +8,8 @@ import com.branko.midlevel.codejudge.dto.response.CommonResponse;
 import com.branko.midlevel.codejudge.exception.BadRequestException;
 import com.branko.midlevel.codejudge.helper.MessageUtil;
 import com.branko.midlevel.codejudge.mapper.SubmissionMapper;
-import com.branko.midlevel.codejudge.repository.entity.*;
 import com.branko.midlevel.codejudge.service.*;
 import com.branko.midlevel.codejudge.service.async.judge.JudgeServiceAsync;
-import com.branko.midlevel.codejudge.service.strategy.judgestrategy.JudgeStrategy;
-import com.branko.midlevel.codejudge.service.strategy.judgestrategy.JudgeStrategyFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -60,7 +56,7 @@ public class SubmitSubmissionUseCase {
 
         String language = request.getLanguage().trim().toLowerCase();
         if (!JudgeLanguageStrategyName.isAllowedLanguage(language)) {
-            throw new RuntimeException(messageUtil.get("submission.language.invalid"));
+            throw new BadRequestException(messageUtil.get("submission.language.invalid"));
         }
         request.setLanguage(language);
         return contestProblemDto;

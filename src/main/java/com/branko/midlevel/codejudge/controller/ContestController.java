@@ -7,12 +7,13 @@ import com.branko.midlevel.codejudge.dto.request.UpdateContestRequest;
 import com.branko.midlevel.codejudge.dto.response.AddUsersToContestResponse;
 import com.branko.midlevel.codejudge.dto.response.CommonResponse;
 import com.branko.midlevel.codejudge.dto.response.ContestResponse;
-import com.branko.midlevel.codejudge.usecase.AddUsersToContestUseCase;
-import com.branko.midlevel.codejudge.usecase.CreateContestUseCase;
-import com.branko.midlevel.codejudge.usecase.EnrollContestUseCase;
-import com.branko.midlevel.codejudge.usecase.UpdateContestUseCase;
+import com.branko.midlevel.codejudge.usecase.usercontest.AddUsersToContestUseCase;
+import com.branko.midlevel.codejudge.usecase.contest.CreateContestUseCase;
+import com.branko.midlevel.codejudge.usecase.usercontest.EnrollContestUseCase;
+import com.branko.midlevel.codejudge.usecase.contest.UpdateContestUseCase;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,16 +27,19 @@ public class ContestController {
     private final UpdateContestUseCase updateContestUseCase;
     private final EnrollContestUseCase enrollContestUseCase;
 
+    @PreAuthorize("hasRole('admin')")
     @PostMapping("/CreateContest")
     public ContestResponse createContest(@Valid @RequestBody CreateContestRequest request) {
         return createContestUseCase.execute(request);
     }
 
+    @PreAuthorize("hasRole('admin')")
     @PostMapping("/UpdateContest")
     public ContestResponse updateContest(@Valid @RequestBody UpdateContestRequest request) {
         return updateContestUseCase.execute(request);
     }
 
+    @PreAuthorize("hasRole('admin')")
     @PostMapping("/AddUsersToContest")
     public AddUsersToContestResponse addUsersToContest(@Valid @RequestBody AddUsersToContestRequest request) {
         return addUsersToContestUseCase.execute(request);
@@ -45,6 +49,4 @@ public class ContestController {
     public CommonResponse enrollContest(@Valid @RequestBody EnrollContestRequest request) {
         return enrollContestUseCase.execute(request);
     }
-
-
 }

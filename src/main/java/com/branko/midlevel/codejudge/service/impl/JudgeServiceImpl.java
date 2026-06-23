@@ -1,4 +1,4 @@
-package com.branko.midlevel.codejudge.service;
+package com.branko.midlevel.codejudge.service.impl;
 
 import com.branko.midlevel.codejudge.constant.VeredictEnum;
 import com.branko.midlevel.codejudge.dto.other.ExecutionResult;
@@ -7,6 +7,9 @@ import com.branko.midlevel.codejudge.dto.other.TestCaseDto;
 import com.branko.midlevel.codejudge.mapper.TestCaseMapper;
 import com.branko.midlevel.codejudge.repository.entity.Submission;
 import com.branko.midlevel.codejudge.repository.entity.SubmissionResult;
+import com.branko.midlevel.codejudge.service.JudgeService;
+import com.branko.midlevel.codejudge.service.ProcessExecutorService;
+import com.branko.midlevel.codejudge.service.SubmissionResultService;
 import com.branko.midlevel.codejudge.service.strategy.judgestrategy.JudgeStrategy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
